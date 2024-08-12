@@ -61,7 +61,7 @@ const Receta = () => {
                         </div>
                         <div className="border-t border-blue-200 my-2"></div>
                         <p className="text-sm text-gray-700 mt-4 mb-2">Fecha de Emisión: {new Date(receta.fechaEmision).toLocaleDateString()}</p>
-                        <h3 className="text-blue-500 font-bold text-lg mb-2">{`Dr: ${receta.doctor}`}</h3>
+                        <h3 className="text-blue-500 font-bold text-lg mb-2">{`${receta.doctor}`}</h3>
                         <p className="text-sm text-gray-700 mb-2">{receta.especialidad}</p>
                         <p className="text-sm text-gray-700 mb-4">Código: <span className="font-bold">{receta.codigo}</span></p>
                         <div className="flex justify-end">

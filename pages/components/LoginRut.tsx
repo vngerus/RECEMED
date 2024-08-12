@@ -1,20 +1,20 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useAuthContext } from '../hook/authContext';
 import Cookies from 'js-cookie';
 
-const LoginRUT = () => {
+const LoginRUT: React.FC = () => {
     console.time('useAuthContext in LoginRUT');
     const { setRut } = useAuthContext();
     console.timeEnd('useAuthContext in LoginRUT');
 
-    const [inputRUT, setInputRUT] = useState('');
+    const [inputRUT, setInputRUT] = useState<string>('');
 
     const handleNext = () => {
         console.time('handleNext in LoginRUT');
         if (inputRUT) {
             setRut(inputRUT);
             Cookies.set('userRUT', inputRUT);
-            window.location.href = '/password';
+            window.location.assign('/password');
         } else {
             console.error('Por favor, ingrese su RUT.');
         }
